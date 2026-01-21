@@ -418,7 +418,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onProceedToCheckout }) => {
               { q: "Como acompanho o meu pedido?", a: "Após a confirmação do pagamento, o código de rastreamento será enviado por e-mail em até 3 dias úteis." },
               { q: "A fada é feita de quê?", a: "Esculpidas à mão com resina mística ecológica de alta durabilidade, protegidas por vidro temperado." },
               { q: "E se o vidro chegar quebrado?", a: "Nossa Garantia Intacta cobre o envio de uma nova peça imediatamente, sem custos." },
-              { q: "O brinde de cristal é verdadeiro?", a: "Sim! Cada amuleto contém um cristal de Quartzo autêntico para harmonização." },
+              { q: "As fadas acompanham algum texto explicativo?", a: "A fada é a guardiã, mas a força vem da sua intenção! Por isso, as jarras vão prontas para receberem as suas palavras. Você escreve seus desejos de saúde e prosperidade e os sela dentro da jarra." },
               { q: "O site é realmente seguro?", a: "Totalmente seguro. Utilizamos criptografia SSL de 256 bits e processamento via Mercado Pago." }
             ].map((faq, idx) => (
               <div key={idx} className="faq-item bg-white px-6 py-5 rounded-xl shadow-sm cursor-pointer group" onClick={(e) => e.currentTarget.classList.toggle('active')}>

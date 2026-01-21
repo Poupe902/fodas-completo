@@ -10,7 +10,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onProceedToCheckout }) => {
   const [showNotification, setShowNotification] = useState(false);
   const [notifData, setNotifData] = useState({ name: 'Juliana', city: 'Curitiba', variant: 'Mossveil' });
   const [isReviewFormOpen, setIsReviewFormOpen] = useState(false);
-  const [currentRating, setCurrentRating] = useState(0);
+  const [currentRating, setCurrentRating] = useAmuletoState(0);
   const [isReviewSubmitted, setIsReviewSubmitted] = useState(false);
 
   const ofertaRef = useRef<HTMLElement>(null);
@@ -251,7 +251,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onProceedToCheckout }) => {
                   </div>
                   
                   <div className="w-44 h-32 mb-6 mt-4">
-                     <img src="https://i.ibb.co/QvjdbV8k/Artesao.png" alt="Brinde" className="w-full h-full object-cover rounded-xl filter drop-shadow-md grayscale-[0.2]" />
+                     <img src="https://i.ibb.co/Cs3TFjF3/4ffde935-7254-4725-afee-7efe88dee736.png" alt="Brinde" className="w-full h-full object-cover rounded-xl filter drop-shadow-md grayscale-[0.2]" />
                   </div>
                   
                   <h4 className="font-bold text-gray-800 text-lg mb-1">Amuleto de Cristal Real</h4>

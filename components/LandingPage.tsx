@@ -251,7 +251,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onProceedToCheckout }) => {
                   </div>
                   
                   <div className="w-44 h-32 mb-6 mt-4">
-                     <img src="https://i.ibb.co/QvjdbV8k/Artesao.png" alt="Brinde" className="w-full h-full object-cover rounded-xl filter drop-shadow-md grayscale-[0.2]" />
+                     <img src="https://ibb.co/Qj31GWG3" alt="Brinde" className="w-full h-full object-cover rounded-xl filter drop-shadow-md grayscale-[0.2]" />
                   </div>
                   
                   <h4 className="font-bold text-gray-800 text-lg mb-1">Amuleto de Cristal Real</h4>

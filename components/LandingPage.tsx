@@ -16,7 +16,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onProceedToCheckout }) => {
   const ofertaRef = useRef<HTMLElement>(null);
 
   const variantsData: any = {
-    fernheart: {
+    FERNHEART: {
       title: 'Magia <span class="text-primary font-magic text-4xl md:text-6xl">Fernheart</span> no seu Pote',
       img: 'https://i.ibb.co.com/RGvTm5G2/Fernheart-Fairy-Jar-Fernheart-Pote-de-Fadas.webp',
       label: 'FERNHEART - POTE DE FADA',
@@ -24,7 +24,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onProceedToCheckout }) => {
       description: 'Ideal para quem deseja evolução pessoal, projetos novos, abundância e força interior para recomeçar.',
       icon: 'sprout'
     },
-    mossveil: {
+    MOSSVEIL: {
       title: 'O <span class="text-primary font-magic text-4xl md:text-6xl">Véu de Musgo</span> Místico',
       img: 'https://i.ibb.co.com/LDQ94dY0/Mossveil-Fairy-Jar-Mossveil-Pote-de-Fadas.webp',
       label: 'MOSSVEIL - POTE DE FADA',
@@ -32,7 +32,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onProceedToCheckout }) => {
       description: 'Indicada para atrair harmonia, autocuidado, cura emocional e conexão com a natureza.',
       icon: 'leaf'
     },
-    sunwhisper: {
+    SUNWHISPER: {
       title: 'O <span class="text-primary font-magic text-4xl md:text-6xl">Sussurro do Sol</span> Dourado',
       img: 'https://i.ibb.co.com/Zzh5LzT1/Sunwhisper-Fairy-Jar-Sussurro-do-Sol-Pote-de-Fadas.webp',
       label: 'SUNWHISPER - POTE DE FADA',
@@ -40,7 +40,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onProceedToCheckout }) => {
       description: 'Para iluminar caminhos, aumentar a energia, autoestima e atrair boas oportunidades.',
       icon: 'sun'
     },
-    moonshadow: {
+    ELOWEN: {
       title: 'A <span class="text-primary font-magic text-4xl md:text-6xl">Sombra Lunar</span> Prateada',
       img: 'https://i.ibb.co.com/dsPh4Njh/Elowen-Fairy-Jar-Elowen-Pote-de-Fadas.webp',
       label: 'ELOWEN - POTE DE FADA',
@@ -56,7 +56,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onProceedToCheckout }) => {
       description: 'Perfeita para quem está manifestando desejos, metas importantes e fé no futuro.',
       icon: 'sparkles'
     },
-    rosequartz: {
+    DAISY: {
       title: 'Coração de <span class="text-primary font-magic text-4xl md:text-6xl">Quartzo</span> Rosa',
       img: 'https://i.ibb.co.com/GfnYDpqZ/Daisy-Fairy-Jar-Margarida-Jarra-de-Fada.webp',
       label: 'DAISY - POTE DE FADA',
@@ -64,7 +64,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onProceedToCheckout }) => {
       description: 'Atrai amor-próprio, cura emocional, harmonia nos relacionamentos e afeto verdadeiro.',
       icon: 'heart'
     },
-    oceanmist: {
+    ISOLA: {
       title: 'A <span class="text-primary font-magic text-4xl md:text-6xl">Névoa do Oceano</span>',
       img: 'https://i.ibb.co.com/1J8zvbg6/Isola-Fairy-Jar-Isola-Jarra-de-Fada.webp',
       label: 'ISOLA - POTE DE FADA',
@@ -72,7 +72,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onProceedToCheckout }) => {
       description: 'Ideal para aliviar ansiedade, trazer paz interior e ajudar em decisões importantes.',
       icon: 'waves'
     },
-    winterfrost: {
+    DEWDROP: {
       title: 'A <span class="text-primary font-magic text-4xl md:text-6xl">Geada de Inverno</span>',
       img: 'https://i.ibb.co.com/fYrLzZtj/Dewdrop-Fairy-Jar-Gota-de-Orvalho-Pote-de-Fada.webp',
       label: 'DEWDROP - POTE DE FADA',

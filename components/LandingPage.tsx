@@ -156,14 +156,8 @@ const LandingPage: React.FC<LandingPageProps> = ({ onProceedToCheckout }) => {
           <div className="flex flex-col md:flex-row items-center gap-12">
             <div className="md:w-1/2 order-2 md:order-1 animate-fadeIn">
               <div className="flex items-center justify-center md:justify-start gap-2 mb-3">
-                <div className="flex text-[#FFB800] gap-0.5">
-                   <i data-lucide="star" className="w-3 h-3 fill-current"></i>
-                   <i data-lucide="star" className="w-3 h-3 fill-current"></i>
-                   <i data-lucide="star" className="w-3 h-3 fill-current"></i>
-                   <i data-lucide="star" className="w-3 h-3 fill-current"></i>
-                   <i data-lucide="star" className="w-3 h-3 fill-current"></i>
-                </div>
-                <span className="text-[11px] font-bold text-gray-500 uppercase tracking-widest">PRODUTO MAIS DESEJADO DO ANO</span>
+                
+                
               </div>
 
               <h1 dangerouslySetInnerHTML={{ __html: variantsData[currentVariant].title }} className="text-3xl md:text-5xl font-bold text-gray-800 mb-6 leading-tight" />

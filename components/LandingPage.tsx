@@ -216,7 +216,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onProceedToCheckout }) => {
             </h2>
             <div className="space-y-6 text-gray-700 leading-relaxed text-lg italic">
               <p>"Imagine colocar uma fada no seu espaço sagrado, como um lembrete diário da sua mente, incentivando você a se reconectar com o seu verdadeiro eu."</p>
-              <img src="https://i.ibb.co/Cs3TFjF3/4ffde935-7254-4725-afee-7efe88dee736.png" alt="Artesão" className="mx-auto rounded-3xl" />
+              <img src="https://i.ibb.co/QvjdbV8k/Artesao.png" alt="Artesão" className="mx-auto rounded-3xl" />
               <p className="font-bold text-gray-800 not-italic">Com cada fada única, você não está apenas comprando uma bela obra de arte — você também está iniciando uma jornada de autodescoberta e cura.</p>
             </div>
           </div>

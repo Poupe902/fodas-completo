@@ -216,7 +216,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onProceedToCheckout }) => {
             </h2>
             <div className="space-y-6 text-gray-700 leading-relaxed text-lg italic">
               <p>"Imagine colocar uma fada no seu espaço sagrado, como um lembrete diário da sua mente, incentivando você a se reconectar com o seu verdadeiro eu."</p>
-              <img src="https://i.ibb.co/QvjdbV8k/Artesao.png" alt="Artesão" className="mx-auto rounded-3xl" />
+              <img src="https://i.ibb.co/Cs3TFjF3/4ffde935-7254-4725-afee-7efe88dee736.png" alt="Artesão" className="mx-auto rounded-3xl" />
               <p className="font-bold text-gray-800 not-italic">Com cada fada única, você não está apenas comprando uma bela obra de arte — você também está iniciando uma jornada de autodescoberta e cura.</p>
             </div>
           </div>
@@ -247,7 +247,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onProceedToCheckout }) => {
                 {/* Box 2: Brinde */}
                 <div className="p-8 bg-white rounded-[2rem] border-2 border-gray-200 border-dashed relative flex flex-col items-center justify-center">
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#EAD196] px-5 py-1.5 rounded-full shadow-md z-10 border border-[#d4af37]">
-                    <span className="text-[9px] font-black uppercase text-gray-800 tracking-[0.1em] whitespace-nowrap">BRINDE EXCLUSIVO ✨</span>
+                    <span className="text-[9px] font-black uppercase text-gray-800 tracking-[0.1em] whitespace-nowrap">BRINDE EXCLUSIVO 21/01 - 23/02 ✨</span>
                   </div>
                   
                   <div className="w-44 h-32 mb-6 mt-4">

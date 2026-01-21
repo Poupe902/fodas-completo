@@ -415,18 +415,13 @@ const LandingPage: React.FC<LandingPageProps> = ({ onProceedToCheckout }) => {
           <h2 className="text-3xl font-bold text-center mb-12 uppercase tracking-tight">DÚVIDAS FREQUENTES</h2>
           <div className="space-y-4">
             {[
-           
-
-                 { q: "Como funciona os envios?", a: "Os pedidos são despachados em até 3 dias úteis após a confirmação do pagamento e tem garantia total em caso de insatisfação." },
-              
       
+              { q: "Como funciona os envios?", a: "Os pedidos são despachados em até 3 dias úteis após a confirmação do pagamento e tem garantia total em caso de insatisfação." },
               { q: "A fada é feita de quê?", a: "Esculpidas à mão com argila ecológica de alta durabilidade" },
               { q: "Como as fadas são embaladas?", a: "As Fadas Artesanais são embaladas com muito muito carinho, de forma segura embalado dentro de uma caixa com fibra de sisal, garantindo proteção durante o transporte e uma experiência especial ao receber." },
               { q: "As fadas acompanham algum texto explicativo?", a: "A fada é a guardiã, mas a força vem da sua intenção! Por isso, as jarras vão prontas para receberem as suas palavras. Você escreve seus desejos e os sela dentro da jarra." },
               { q: "O site é realmente seguro?", a: "Totalmente seguro. Utilizamos criptografia SSL de 256 bits e processamento via Mercado Pago." }
-   { q: "Como acompanho o meu pedido?", a: "Após a confirmação do pagamento, o código de rastreamento será enviado por e-mail em até 3 dias úteis." },
-
-      
+              { q: "Como acompanho o meu pedido?", a: "Após a confirmação do pagamento, o código de rastreamento será enviado por e-mail em até 3 dias úteis." },
             ].map((faq, idx) => (
               <div key={idx} className="faq-item bg-white px-6 py-5 rounded-xl shadow-sm cursor-pointer group" onClick={(e) => e.currentTarget.classList.toggle('active')}>
                 <div className="flex justify-between items-center font-bold">

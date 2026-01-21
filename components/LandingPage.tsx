@@ -48,7 +48,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onProceedToCheckout }) => {
       description: 'Ajuda a afastar energias negativas, fortalecer a intuição e trazer segurança emocional.',
       icon: 'moon'
     },
-    starfall: {
+    elara: {
       title: 'Chuva de <span class="text-primary font-magic text-4xl md:text-6xl">Estrelas</span> no Vidro',
       img: 'https://i.ibb.co.com/BSHz54q/Elara-Fairy-Jar-Elara-Pote-de-Fadas.webp',
       label: 'ELARA - POTE DE FADA',

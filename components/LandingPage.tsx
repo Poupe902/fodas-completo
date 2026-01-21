@@ -19,42 +19,66 @@ const LandingPage: React.FC<LandingPageProps> = ({ onProceedToCheckout }) => {
     fernheart: {
       title: 'Magia <span class="text-primary font-magic text-4xl md:text-6xl">Fernheart</span> no seu Pote',
       img: 'https://i.ibb.co.com/RGvTm5G2/Fernheart-Fairy-Jar-Fernheart-Pote-de-Fadas.webp',
-      label: 'FERNHEART - POTE DE FADA'
+      label: 'FERNHEART - POTE DE FADA',
+      purpose: 'Prosperidade, crescimento e novos começos',
+      description: 'Ideal para quem deseja evolução pessoal, projetos novos, abundância e força interior para recomeçar.',
+      icon: 'sprout'
     },
     mossveil: {
       title: 'O <span class="text-primary font-magic text-4xl md:text-6xl">Véu de Musgo</span> Místico',
       img: 'https://i.ibb.co.com/LDQ94dY0/Mossveil-Fairy-Jar-Mossveil-Pote-de-Fadas.webp',
-      label: 'MOSSVEIL - POTE DE FADA'
+      label: 'MOSSVEIL - POTE DE FADA',
+      purpose: 'Saúde, equilíbrio e bem-estar',
+      description: 'Indicada para atrair harmonia, autocuidado, cura emocional e conexão com a natureza.',
+      icon: 'leaf'
     },
     sunwhisper: {
       title: 'O <span class="text-primary font-magic text-4xl md:text-6xl">Sussurro do Sol</span> Dourado',
       img: 'https://i.ibb.co.com/Zzh5LzT1/Sunwhisper-Fairy-Jar-Sussurro-do-Sol-Pote-de-Fadas.webp',
-      label: 'SUNWHISPER - POTE DE FADA'
+      label: 'SUNWHISPER - POTE DE FADA',
+      purpose: 'Alegria, vitalidade e sucesso',
+      description: 'Para iluminar caminhos, aumentar a energia, autoestima e atrair boas oportunidades.',
+      icon: 'sun'
     },
     moonshadow: {
       title: 'A <span class="text-primary font-magic text-4xl md:text-6xl">Sombra Lunar</span> Prateada',
       img: 'https://i.ibb.co.com/dsPh4Njh/Elowen-Fairy-Jar-Elowen-Pote-de-Fadas.webp',
-      label: 'ELOWEN - POTE DE FADA'
+      label: 'ELOWEN - POTE DE FADA',
+      purpose: 'Proteção espiritual e intuição',
+      description: 'Ajuda a afastar energias negativas, fortalecer a intuição e trazer segurança emocional.',
+      icon: 'moon'
     },
     starfall: {
       title: 'Chuva de <span class="text-primary font-magic text-4xl md:text-6xl">Estrelas</span> no Vidro',
       img: 'https://i.ibb.co.com/BSHz54q/Elara-Fairy-Jar-Elara-Pote-de-Fadas.webp',
-      label: 'ELARA - POTE DE FADA'
+      label: 'ELARA - POTE DE FADA',
+      purpose: 'Realização de sonhos e esperança',
+      description: 'Perfeita para quem está manifestando desejos, metas importantes e fé no futuro.',
+      icon: 'sparkles'
     },
     rosequartz: {
       title: 'Coração de <span class="text-primary font-magic text-4xl md:text-6xl">Quartzo</span> Rosa',
       img: 'https://i.ibb.co.com/GfnYDpqZ/Daisy-Fairy-Jar-Margarida-Jarra-de-Fada.webp',
-      label: 'DAISY - POTE DE FADA'
+      label: 'DAISY - POTE DE FADA',
+      purpose: 'Amor, autoestima e relacionamentos',
+      description: 'Atrai amor-próprio, cura emocional, harmonia nos relacionamentos e afeto verdadeiro.',
+      icon: 'heart'
     },
     oceanmist: {
       title: 'A <span class="text-primary font-magic text-4xl md:text-6xl">Névoa do Oceano</span>',
       img: 'https://i.ibb.co.com/1J8zvbg6/Isola-Fairy-Jar-Isola-Jarra-de-Fada.webp',
-      label: 'ISOLA - POTE DE FADA'
+      label: 'ISOLA - POTE DE FADA',
+      purpose: 'Calma, clareza mental e fluidez',
+      description: 'Ideal para aliviar ansiedade, trazer paz interior e ajudar em decisões importantes.',
+      icon: 'waves'
     },
     winterfrost: {
       title: 'A <span class="text-primary font-magic text-4xl md:text-6xl">Geada de Inverno</span>',
       img: 'https://i.ibb.co.com/fYrLzZtj/Dewdrop-Fairy-Jar-Gota-de-Orvalho-Pote-de-Fada.webp',
-      label: 'DEWDROP - POTE DE FADA'
+      label: 'DEWDROP - POTE DE FADA',
+      purpose: 'Foco, disciplina e estabilidade',
+      description: 'Auxilia no controle emocional, organização da vida e fortalecimento da mente.',
+      icon: 'snowflake'
     }
   };
 
@@ -78,6 +102,12 @@ const LandingPage: React.FC<LandingPageProps> = ({ onProceedToCheckout }) => {
 
     return () => clearInterval(notificationInterval);
   }, []);
+
+  // Recriar ícones lucide sempre que a variante mudar para garantir que os novos apareçam
+  useEffect(() => {
+    // @ts-ignore
+    if (window.lucide) window.lucide.createIcons();
+  }, [currentVariant]);
 
   const scrollToOferta = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -139,19 +169,25 @@ const LandingPage: React.FC<LandingPageProps> = ({ onProceedToCheckout }) => {
               <h1 dangerouslySetInnerHTML={{ __html: variantsData[currentVariant].title }} className="text-3xl md:text-5xl font-bold text-gray-800 mb-6 leading-tight" />
 
               {/* Grid de 8 Variações */}
-              <div className="grid grid-cols-4 gap-3 mb-10">
+              <div className="grid grid-cols-4 gap-3 mb-6">
                 {Object.keys(variantsData).map(key => (
                   <div key={key} onClick={() => setCurrentVariant(key)} 
-                    className={`cursor-pointer transition-all p-1 rounded-xl text-center shadow-sm bg-white border-2 ${currentVariant === key ? 'border-primary scale-105' : 'border-transparent'}`}>
+                    className={`cursor-pointer transition-all p-1 rounded-xl text-center shadow-sm bg-white border-2 ${currentVariant === key ? 'border-primary scale-105' : 'border-transparent opacity-70 grayscale-[0.5] hover:opacity-100 hover:grayscale-0'}`}>
                     <img src={variantsData[key].img} className="rounded-lg h-12 w-full object-cover mb-1" />
                     <span className="text-[8px] font-bold block truncate uppercase">{key}</span>
                   </div>
                 ))}
               </div>
 
-              <div className="mb-6 p-6 bg-white bg-opacity-60 rounded-2xl border-l-4 border-primary shadow-sm">
-                <p className="text-gray-700 italic leading-relaxed text-sm md:text-base">
-                  "Você se sente um pouco perdido ou invisível? Deixe que minhas fadas artesanais conectem você com sua criança interior para que você possa redescobrir sua magia."
+              {/* Explicação do Propósito - Novo Elemento */}
+              <div key={currentVariant} className="bg-white/80 backdrop-blur-sm p-6 rounded-2xl border-l-4 border-primary shadow-sm mb-8 animate-fadeIn">
+                <div className="flex items-center gap-3 mb-2 text-primary">
+                   <i data-lucide={variantsData[currentVariant].icon} className="w-5 h-5"></i>
+                   <span className="text-xs font-black uppercase tracking-widest">O Propósito desta Fada</span>
+                </div>
+                <h4 className="text-lg font-bold text-gray-800 mb-2">{variantsData[currentVariant].purpose}</h4>
+                <p className="text-gray-600 italic text-sm leading-relaxed">
+                  {variantsData[currentVariant].description}
                 </p>
               </div>
 
@@ -166,7 +202,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onProceedToCheckout }) => {
             </div>
 
             <div className="md:w-1/2 order-1 md:order-2 relative animate-fadeIn">
-              <img src={variantsData[currentVariant].img} alt="Fada artesanal mística" className="rounded-2xl shadow-2xl w-full sparkle-animation border-8 border-white transition-all duration-500 min-h-[400px] object-cover" />
+              <img key={variantsData[currentVariant].img} src={variantsData[currentVariant].img} alt="Fada artesanal mística" className="rounded-2xl shadow-2xl w-full sparkle-animation border-8 border-white transition-all duration-500 min-h-[400px] object-cover" />
               <div className="absolute -top-6 -right-2 bg-accent text-gray-800 font-bold rounded-full h-24 w-24 flex flex-col items-center justify-center shadow-lg text-center leading-tight text-[10px]">
                 <i data-lucide="award" className="w-5 h-5 mb-1 text-primary"></i>
                 PRODUTO<br/>AUTÊNTICO
@@ -208,15 +244,16 @@ const LandingPage: React.FC<LandingPageProps> = ({ onProceedToCheckout }) => {
                 <div className="p-8 bg-[#FDF8F3] rounded-[2rem] border-2 border-[#8E7AB5]/30 border-dashed relative flex flex-col items-center">
                   <p className="text-[10px] font-bold text-[#8E7AB5]/60 tracking-[0.2em] mb-6 uppercase">SEU PRODUTO:</p>
                   <div className="w-52 h-52 mb-8 transform hover:scale-105 transition-transform duration-500">
-                    <img src={variantsData[currentVariant].img} alt="Produto Escolhido" className="w-full h-full object-cover rounded-[1.5rem] shadow-xl border-4 border-white" />
+                    <img key={variantsData[currentVariant].img} src={variantsData[currentVariant].img} alt="Produto Escolhido" className="w-full h-full object-cover rounded-[1.5rem] shadow-xl border-4 border-white" />
                   </div>
                   <h3 className="text-xl font-black text-gray-800 italic uppercase tracking-tighter">{variantsData[currentVariant].label}</h3>
+                  <p className="text-xs text-primary font-bold mt-2 uppercase tracking-wide">{variantsData[currentVariant].purpose}</p>
                 </div>
 
                 {/* Box 2: Brinde */}
                 <div className="p-8 bg-white rounded-[2rem] border-2 border-gray-200 border-dashed relative flex flex-col items-center justify-center">
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#EAD196] px-5 py-1.5 rounded-full shadow-md z-10 border border-[#d4af37]">
-                    <span className="text-[9px] font-black uppercase text-gray-800 tracking-[0.1em] whitespace-nowrap">BRINDE EXCLUSIVO 18/01/26 - 20/01/26</span>
+                    <span className="text-[9px] font-black uppercase text-gray-800 tracking-[0.1em] whitespace-nowrap">BRINDE EXCLUSIVO ✨</span>
                   </div>
                   
                   <div className="w-44 h-32 mb-6 mt-4">
@@ -402,7 +439,16 @@ const LandingPage: React.FC<LandingPageProps> = ({ onProceedToCheckout }) => {
         </div>
       </section>
 
-     
+      {/* Botão flutuante do WhatsApp */}
+      <a 
+        href="https://wa.me/5511967890681?text=Preciso%20de%20suporte" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="fixed bottom-6 right-6 z-[100] flex items-center justify-center w-16 h-16 bg-[#25D366] text-white rounded-full shadow-2xl hover:scale-110 transition-transform animate-bounce-subtle"
+        title="Fale conosco no WhatsApp"
+      >
+        <i className="fa-brands fa-whatsapp text-4xl"></i>
+      </a>
 
       {/* Notificação de Venda */}
       <div id="sales-notification" className={showNotification ? 'show' : ''}>

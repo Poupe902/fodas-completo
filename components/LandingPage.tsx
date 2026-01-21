@@ -439,16 +439,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onProceedToCheckout }) => {
         </div>
       </section>
 
-      {/* Botão flutuante do WhatsApp */}
-      <a 
-        href="https://wa.me/5511967890681?text=Preciso%20de%20suporte" 
-        target="_blank" 
-        rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 z-[100] flex items-center justify-center w-16 h-16 bg-[#25D366] text-white rounded-full shadow-2xl hover:scale-110 transition-transform animate-bounce-subtle"
-        title="Fale conosco no WhatsApp"
-      >
-        <i className="fa-brands fa-whatsapp text-4xl"></i>
-      </a>
+     
 
       {/* Notificação de Venda */}
       <div id="sales-notification" className={showNotification ? 'show' : ''}>

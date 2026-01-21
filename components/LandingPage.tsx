@@ -494,7 +494,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onProceedToCheckout }) => {
 
           <div className="border-t border-gray-800/50 pt-12">
             <p className="text-gray-500 text-[10px] uppercase tracking-[0.2em] font-medium">
-              © 2022 FADAS ARTESANAIS LTDA • CNPJ 04.724.488/0001-50 • Marca e Patentes Registradas no INPI
+              © 2022 FADAS ARTESANAIS LTDA • Marca e Patentes Registradas no INPI
             </p>
           </div>
         </div>

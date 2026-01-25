@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef } from 'react';
 
 interface LandingPageProps {
@@ -14,6 +13,9 @@ const LandingPage: React.FC<LandingPageProps> = ({ onProceedToCheckout }) => {
   const [isReviewSubmitted, setIsReviewSubmitted] = useState(false);
 
   const ofertaRef = useRef<HTMLElement>(null);
+
+  // ⭐⭐ AQUI VOCÊ PODE MUDAR O LINK DE REDIRECIONAMENTO ⭐⭐
+  const checkoutLink = "https://seu-link-de-checkout-aqui.com"; // ← ALTERE AQUI
 
   const variantsData: any = {
     fernheart: {
@@ -125,6 +127,11 @@ const LandingPage: React.FC<LandingPageProps> = ({ onProceedToCheckout }) => {
       return;
     }
     setIsReviewSubmitted(true);
+  };
+
+  // ⭐⭐ FUNÇÃO PARA REDIRECIONAR PARA O LINK ⭐⭐
+  const handleBuyNow = () => {
+    window.location.href = checkoutLink; // ← Isso redireciona para o link
   };
 
   return (
@@ -283,9 +290,9 @@ const LandingPage: React.FC<LandingPageProps> = ({ onProceedToCheckout }) => {
                 </div>
               </div>
 
-              {/* Botão de Compra - Estilo Screenshot */}
+              {/* ⭐⭐ BOTÃO DE COMPRA - AGORA REDIRECIONA PARA O LINK ⭐⭐ */}
               <button 
-                onClick={onProceedToCheckout}
+                onClick={handleBuyNow} {/* ← AQUI FOI ALTERADO */}
                 className="w-full max-w-xl mx-auto bg-[#EAD196] hover:bg-[#dec485] text-gray-900 text-2xl font-black py-7 rounded-[1.5rem] shadow-[0_12px_40px_rgba(234,209,150,0.4)] transition-all transform hover:scale-[1.03] active:scale-95 uppercase tracking-tighter block mb-12 border-b-4 border-[#d4af37]"
               >
                 COMPRAR AGORA

@@ -15,7 +15,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onProceedToCheckout }) => {
   const ofertaRef = useRef<HTMLElement>(null);
 
   // ⭐⭐ AQUI VOCÊ PODE MUDAR O LINK DE REDIRECIONAMENTO ⭐⭐
-  const checkoutLink = "https://seu-link-de-checkout-aqui.com"; // ← ALTERE AQUI
+  const checkoutLink = "https://www.youtube.com/"; // ← ALTERE AQUI
 
   const variantsData: any = {
     fernheart: {

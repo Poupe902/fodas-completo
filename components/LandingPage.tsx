@@ -292,11 +292,11 @@ const LandingPage: React.FC<LandingPageProps> = ({ onProceedToCheckout }) => {
 
               {/* ⭐⭐ BOTÃO DE COMPRA - AGORA REDIRECIONA PARA O LINK ⭐⭐ */}
               <button 
-                onClick={handleBuyNow} {/* ← AQUI FOI ALTERADO */}
-                className="w-full max-w-xl mx-auto bg-[#EAD196] hover:bg-[#dec485] text-gray-900 text-2xl font-black py-7 rounded-[1.5rem] shadow-[0_12px_40px_rgba(234,209,150,0.4)] transition-all transform hover:scale-[1.03] active:scale-95 uppercase tracking-tighter block mb-12 border-b-4 border-[#d4af37]"
-              >
-                COMPRAR AGORA
-              </button>
+  onClick={handleBuyNow}
+  className="w-full max-w-xl mx-auto bg-[#EAD196] hover:bg-[#dec485] text-gray-900 text-2xl font-black py-7 rounded-[1.5rem] shadow-[0_12px_40px_rgba(234,209,150,0.4)] transition-all transform hover:scale-[1.03] uppercase tracking-tighter block mb-12 border-b-4 border-[#d4af37]"
+>
+  COMPRAR AGORA
+</button>
 
               {/* Selos de Pagamento */}
               <div className="text-center pb-4">

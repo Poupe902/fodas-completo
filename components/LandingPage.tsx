@@ -13,7 +13,7 @@ function dispararEventoView() {
     setTimeout(dispararEventoView, 300);
   }
 }
-
+console.log("location.serch conteudo", window.location.search)
 const LandingPage: React.FC<LandingPageProps> = ({ onProceedToCheckout }) => {
   const [currentVariant, setCurrentVariant] = useState('fernheart');
   const [showNotification, setShowNotification] = useState(false);

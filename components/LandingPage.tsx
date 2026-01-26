@@ -3,13 +3,20 @@ import React, { useState, useEffect, useRef } from 'react';
 interface LandingPageProps {
   onProceedToCheckout: () => void;
 }
-(function dispararEventoView() {
+function dispararEventoView() {
   console.log("ENTROU NA FUNCAO")
-  if (window.utmifyPixel) {
+  if (typeof window.utmifyPixel === "function") {
     console.log("ENTROU NO IF")
     window.utmifyPixel("PageView");
+  } else {
+    // se ainda não existir, tenta de novo em 300ms
+    setTimeout(dispararEventoView, 300);
   }
-})();
+}
+
+// chama uma vez
+dispararEventoView();
+
 const LandingPage: React.FC<LandingPageProps> = ({ onProceedToCheckout }) => {
   const [currentVariant, setCurrentVariant] = useState('fernheart');
   const [showNotification, setShowNotification] = useState(false);

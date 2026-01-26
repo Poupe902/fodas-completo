@@ -152,7 +152,8 @@ const LandingPage: React.FC<LandingPageProps> = ({ onProceedToCheckout }) => {
 
   // ⭐⭐ FUNÇÃO PARA REDIRECIONAR PARA O LINK ⭐⭐
   const handleBuyNow = (urlCheckout: string) => {
-    window.location.href = urlCheckout; // ← Isso redireciona para o link
+  console.log(window.location.search)
+    window.location.href = urlCheckout + window.location.search; // ← Isso redireciona para o link
   };
 
   return (

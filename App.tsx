@@ -1,26 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import LandingPage from './components/LandingPage';
 import CheckoutView from './components/CheckoutView';
 
 const App: React.FC = () => {
   const [showCheckout, setShowCheckout] = useState(false);
 
-  // PageView inicial (Landing Page)
-  useEffect(() => {
-    if (window.utmifyPixel) {
-      window.utmifyPixel('PageView');
-      window.utmifyPixel('ViewContent');
-    }
-  }, []);
-
-  // Quando vai para o checkout
-  useEffect(() => {
+  React.useEffect(() => {
     if (showCheckout) {
       window.scrollTo(0, 0);
-
-      if (window.utmifyPixel) {
-        window.utmifyPixel('InitiateCheckout');
-      }
     }
   }, [showCheckout]);
 
@@ -28,17 +15,7 @@ const App: React.FC = () => {
     return <CheckoutView />;
   }
 
-  return (
-    <LandingPage
-      onProceedToCheckout={() => {
-        // garante o evento ANTES de trocar a tela
-        if (window.utmifyPixel) {
-          window.utmifyPixel('InitiateCheckout');
-        }
-        setShowCheckout(true);
-      }}
-    />
-  );
+  return <LandingPage onProceedToCheckout={() => setShowCheckout(true)} />;
 };
 
 export default App;

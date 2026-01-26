@@ -3,7 +3,11 @@ import React, { useState, useEffect, useRef } from 'react';
 interface LandingPageProps {
   onProceedToCheckout: () => void;
 }
-
+(function dispararEventoView() {
+  if (window.utmifyPixel) {
+    window.utmifyPixel("PageView");
+  }
+})();
 const LandingPage: React.FC<LandingPageProps> = ({ onProceedToCheckout }) => {
   const [currentVariant, setCurrentVariant] = useState('fernheart');
   const [showNotification, setShowNotification] = useState(false);

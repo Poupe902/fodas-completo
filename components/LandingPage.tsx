@@ -148,10 +148,17 @@ const LandingPage: React.FC<LandingPageProps> = ({ onProceedToCheckout }) => {
   };
 
   // ⭐⭐ FUNÇÃO PARA REDIRECIONAR PARA O LINK ⭐⭐
-  const handleBuyNow = (urlCheckout: string) => {
-  console.log(window.location.search)
-    window.location.href = urlCheckout + window.location.search; // ← Isso redireciona para o link
-  };
+ const handleBuyNow = (urlCheckout: string) => {
+  const params = window.location.search;
+
+  if (!params) {
+    window.location.href = urlCheckout;
+    return;
+  }
+
+  const separator = urlCheckout.includes("?") ? "&" : "?";
+  window.location.href = urlCheckout + separator + params.substring(1);
+};
 
   return (
     <div className="bg-white">

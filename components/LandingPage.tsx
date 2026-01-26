@@ -4,7 +4,9 @@ interface LandingPageProps {
   onProceedToCheckout: () => void;
 }
 (function dispararEventoView() {
+  console.log("ENTROU NA FUNCAO")
   if (window.utmifyPixel) {
+    console.log("ENTROU NO IF")
     window.utmifyPixel("PageView");
   }
 })();

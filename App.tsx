@@ -4,6 +4,11 @@ import CheckoutView from './components/CheckoutView';
 
 const App: React.FC = () => {
   const [showCheckout, setShowCheckout] = useState(false);
+  useEffect(() => {
+    if (window.utmifyPixel) {
+      window.utmifyPixel("PageView");
+    }
+  }, []);
 
   React.useEffect(() => {
     if (showCheckout) {

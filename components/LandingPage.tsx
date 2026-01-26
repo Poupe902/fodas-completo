@@ -24,7 +24,8 @@ const LandingPage: React.FC<LandingPageProps> = ({ onProceedToCheckout }) => {
       label: 'FERNHEART - POTE DE FADA',
       purpose: 'Prosperidade, crescimento e novos começos',
       description: 'Ideal para quem deseja evolução pessoal, projetos novos, abundância e força interior para recomeçar.',
-      icon: 'sprout'
+      icon: 'sprout',
+      urlCheckout: 'https://seguro.fadasartesanais.com/api/public/shopify?product=2723762275228&store=27237'
     },
     mossveil: {
       title: 'O <span class="text-primary font-magic text-4xl md:text-6xl">Véu de Musgo</span> Místico',
@@ -32,7 +33,8 @@ const LandingPage: React.FC<LandingPageProps> = ({ onProceedToCheckout }) => {
       label: 'MOSSVEIL - POTE DE FADA',
       purpose: 'Saúde, equilíbrio e bem-estar',
       description: 'Indicada para atrair harmonia, autocuidado, cura emocional e conexão com a natureza.',
-      icon: 'leaf'
+      icon: 'leaf',
+      urlCheckout: 'https://seguro.fadasartesanais.com/api/public/shopify?product=2723736831945&store=27237'
     },
     sunwhister: {
       title: 'O <span class="text-primary font-magic text-4xl md:text-6xl">Sussurro do Sol</span> Dourado',
@@ -40,7 +42,8 @@ const LandingPage: React.FC<LandingPageProps> = ({ onProceedToCheckout }) => {
       label: 'SUNWHISPER - POTE DE FADA',
       purpose: 'Alegria, vitalidade e sucesso',
       description: 'Para iluminar caminhos, aumentar a energia, autoestima e atrair boas oportunidades.',
-      icon: 'sun'
+      icon: 'sun',
+      urlCheckout: 'https://seguro.fadasartesanais.com/api/public/shopify?product=2723799499845&store=27237'
     },
     elowen: {
       title: 'A <span class="text-primary font-magic text-4xl md:text-6xl">Sombra Lunar</span> Prateada',
@@ -48,7 +51,8 @@ const LandingPage: React.FC<LandingPageProps> = ({ onProceedToCheckout }) => {
       label: 'ELOWEN - POTE DE FADA',
       purpose: 'Proteção espiritual e intuição',
       description: 'Ajuda a afastar energias negativas, fortalecer a intuição e trazer segurança emocional.',
-      icon: 'moon'
+      icon: 'moon',
+      urlCheckout: 'https://seguro.fadasartesanais.com/api/public/shopify?product=2723792128442&store=27237'
     },
     elara: {
       title: 'Chuva de <span class="text-primary font-magic text-4xl md:text-6xl">Estrelas</span> no Vidro',
@@ -56,7 +60,8 @@ const LandingPage: React.FC<LandingPageProps> = ({ onProceedToCheckout }) => {
       label: 'ELARA - POTE DE FADA',
       purpose: 'Realização de sonhos e esperança',
       description: 'Perfeita para quem está manifestando desejos, metas importantes e fé no futuro.',
-      icon: 'sparkles'
+      icon: 'sparkles',
+      urlCheckout: 'https://seguro.fadasartesanais.com/api/public/shopify?product=2723753318799&store=27237'
     },
     daisy: {
       title: 'Coração de <span class="text-primary font-magic text-4xl md:text-6xl">Quartzo</span> Rosa',
@@ -64,7 +69,8 @@ const LandingPage: React.FC<LandingPageProps> = ({ onProceedToCheckout }) => {
       label: 'DAISY - POTE DE FADA',
       purpose: 'Amor, autoestima e relacionamentos',
       description: 'Atrai amor-próprio, cura emocional, harmonia nos relacionamentos e afeto verdadeiro.',
-      icon: 'heart'
+      icon: 'heart',
+      urlCheckout: 'https://seguro.fadasartesanais.com/api/public/shopify?product=2723723591475&store=27237'
     },
     isola: {
       title: 'A <span class="text-primary font-magic text-4xl md:text-6xl">Névoa do Oceano</span>',
@@ -72,7 +78,8 @@ const LandingPage: React.FC<LandingPageProps> = ({ onProceedToCheckout }) => {
       label: 'ISOLA - POTE DE FADA',
       purpose: 'Calma, clareza mental e fluidez',
       description: 'Ideal para aliviar ansiedade, trazer paz interior e ajudar em decisões importantes.',
-      icon: 'waves'
+      icon: 'waves',
+      urlCheckout: 'https://seguro.fadasartesanais.com/api/public/shopify?product=2723754694652&store=27237'
     },
     dewdrop: {
       title: 'A <span class="text-primary font-magic text-4xl md:text-6xl">Geada de Inverno</span>',
@@ -80,7 +87,8 @@ const LandingPage: React.FC<LandingPageProps> = ({ onProceedToCheckout }) => {
       label: 'DEWDROP - POTE DE FADA',
       purpose: 'Foco, disciplina e estabilidade',
       description: 'Auxilia no controle emocional, organização da vida e fortalecimento da mente.',
-      icon: 'snowflake'
+      icon: 'snowflake',
+      urlCheckout: 'https://seguro.fadasartesanais.com/api/public/shopify?product=2723746264839&store=27237'
     }
   };
 
@@ -130,8 +138,8 @@ const LandingPage: React.FC<LandingPageProps> = ({ onProceedToCheckout }) => {
   };
 
   // ⭐⭐ FUNÇÃO PARA REDIRECIONAR PARA O LINK ⭐⭐
-  const handleBuyNow = () => {
-    window.location.href = checkoutLink; // ← Isso redireciona para o link
+  const handleBuyNow = (urlCheckout: string) => {
+    window.location.href = urlCheckout; // ← Isso redireciona para o link
   };
 
   return (
@@ -292,7 +300,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onProceedToCheckout }) => {
 
               {/* ⭐⭐ BOTÃO DE COMPRA - AGORA REDIRECIONA PARA O LINK ⭐⭐ */}
               <button 
-  onClick={handleBuyNow}
+  onClick={handleBuyNow(variantsData[currentVariant].urlCheckout)}
   className="w-full max-w-xl mx-auto bg-[#EAD196] hover:bg-[#dec485] text-gray-900 text-2xl font-black py-7 rounded-[1.5rem] shadow-[0_12px_40px_rgba(234,209,150,0.4)] transition-all transform hover:scale-[1.03] uppercase tracking-tighter block mb-12 border-b-4 border-[#d4af37]"
 >
   COMPRAR AGORA

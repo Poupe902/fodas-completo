@@ -3,21 +3,16 @@ import React, { useState, useEffect, useRef } from 'react';
 interface LandingPageProps {
   onProceedToCheckout: () => void;
 }
-useEffect(() => {
-  let tentativas = 0;
-
-  function dispararEventoView() {
-    if (typeof window.utmifyPixel === "function") {
-      window.utmifyPixel("PageView");
-    } else if (tentativas < 10) {
-      tentativas++;
-      setTimeout(dispararEventoView, 300);
-    }
+function dispararEventoView() {
+  console.log("ENTROU NA FUNCAO")
+  if (typeof window.utmifyPixel === "function") {
+    console.log("ENTROU NO IF")
+    window.utmifyPixel("PageView");
+  } else {
+    // se ainda não existir, tenta de novo em 300ms
+    setTimeout(dispararEventoView, 300);
   }
-
-  dispararEventoView();
-}, []);
-
+}
 
 // chama uma vez
 dispararEventoView();

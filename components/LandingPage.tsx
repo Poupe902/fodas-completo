@@ -280,7 +280,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onProceedToCheckout }) => {
                 {/* Box 2: Brinde */}
                 <div className="p-8 bg-white rounded-[2rem] border-2 border-gray-200 border-dashed relative flex flex-col items-center justify-center">
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#EAD196] px-5 py-1.5 rounded-full shadow-md z-10 border border-[#d4af37]">
-                    <span className="text-[9px] font-black uppercase text-gray-800 tracking-[0.1em] whitespace-nowrap">BRINDE EXCLUSIVO NA DATA 04/02 ✨</span>
+                    <span className="text-[9px] font-black uppercase text-gray-800 tracking-[0.1em] whitespace-nowrap">BRINDE EXCLUSIVO SOMENTE NA DATA 04/02 ✨</span>
                   </div>
                   
                   <div className="w-44 h-32 mb-6 mt-4">
